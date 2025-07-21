@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ygjc+v1=e0o6uvi2z2=yi1&d_jpq#!nhi)!@yb1v9bd@ac&%cp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['thelens-backend.onrender.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
