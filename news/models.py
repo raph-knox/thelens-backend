@@ -16,7 +16,7 @@ class Article(models.Model):
     video_url = models.URLField(blank=True, null=True)
     featured = models.BooleanField(default=False)
     date_published = models.DateTimeField(auto_now_add=True)
-    slug = models.SlugField(unique=True, blank=True)
+    slug = models.SlugField(blank=True, null=True)
 
 
     def __str__(self):

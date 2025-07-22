@@ -21,7 +21,7 @@ class ArticleViewSet(viewsets.ModelViewSet):
     queryset = Article.objects.all()
     filter_backends = [filters.SearchFilter]  # Add this
     search_fields = ['title', 'body']  # Fields to enable search on
-    lookup_field = 'slug'
+    # lookup_field = 'slug'
 
     def get_queryset(self):
         return Article.objects.all().order_by('-date_published')
