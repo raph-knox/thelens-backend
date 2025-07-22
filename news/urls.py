@@ -8,5 +8,5 @@ router.register(r'articles', ArticleViewSet)
 
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),
 ]
