@@ -1,4 +1,4 @@
-from rest_framework import viewsets, permissions
+from rest_framework import viewsets, permissions, filters
 from .models import Article
 from .serializers import ArticleSerializer
 
@@ -19,6 +19,9 @@ class ArticleViewSet(viewsets.ModelViewSet):
     serializer_class = ArticleSerializer
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Article.objects.all()
+    filter_backends = [filters.SearchFilter]  # Add this
+    search_fields = ['title', 'body']  # Fields to enable search on
+    lookup_field = 'slug'
 
     def get_queryset(self):
         return Article.objects.all().order_by('-date_published')
