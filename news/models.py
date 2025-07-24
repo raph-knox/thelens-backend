@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from ckeditor.fields import RichTextField
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
@@ -16,13 +17,14 @@ class Article(models.Model):
     video_url = models.URLField(blank=True, null=True)
     featured = models.BooleanField(default=False)
     date_published = models.DateTimeField(auto_now_add=True)
-    slug = models.SlugField(blank=True, null=True)
+    body = RichTextField()
+    # slug = models.SlugField(blank=True, null=True)
 
 
     def __str__(self):
         return self.title
     
-    def save(self, *args, **kwargs):
+    # def save(self, *args, **kwargs):
         if not self.slug:
             base_slug = slugify(self.title)
             slug = base_slug
