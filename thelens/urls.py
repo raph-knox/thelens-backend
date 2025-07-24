@@ -3,6 +3,8 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from news.views import ArticleViewSet
 from django.http import HttpResponse
+from rest_framework.authtoken.views import obtain_auth_token
+
 
 router = DefaultRouter()
 router.register(r'articles', ArticleViewSet)
